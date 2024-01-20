@@ -22,6 +22,7 @@ add_library(variant_bin STATIC EXCLUDE_FROM_ALL
   generic_clock.c
   PeripheralPins.c
   variant_generic.cpp
+  variant_STM32L051K8U6.cpp
 )
 target_link_libraries(variant_bin PUBLIC variant_usage)
 
