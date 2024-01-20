@@ -6,27 +6,27 @@ add_library(variant INTERFACE)
 add_library(variant_usage INTERFACE)
 
 target_include_directories(variant_usage INTERFACE
-  .
+        .
 )
 
 
 target_link_libraries(variant_usage INTERFACE
-  base_config
+        base_config
 )
 
 target_link_libraries(variant INTERFACE variant_usage)
 
 
-
 add_library(variant_bin STATIC EXCLUDE_FROM_ALL
-  generic_clock.c
-  PeripheralPins.c
-  variant_generic.cpp
-  variant_STM32L051K8U6.cpp
+        generic_clock.c
+        PeripheralPins.c
+        PeripheralPins_STM32L051K8U6.c
+        variant_generic.cpp
+        variant_STM32L051K8U6.cpp
 )
 target_link_libraries(variant_bin PUBLIC variant_usage)
 
 target_link_libraries(variant INTERFACE
-  variant_bin
+        variant_bin
 )
 
